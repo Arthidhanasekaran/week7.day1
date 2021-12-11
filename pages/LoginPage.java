@@ -1,10 +1,15 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import base.BaseHooks;
 
 public class LoginPage extends BaseHooks{
+	
+	public LoginPage(ChromeDriver driver) {
+		this.driver = driver;
+	}
 
 	public LoginPage enterUserName() {
 		driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
@@ -19,7 +24,7 @@ public class LoginPage extends BaseHooks{
 	
 	public HomePage clickLogin() {
 		driver.findElement(By.className("decorativeSubmit")).click();
-		return new HomePage();
+		return new HomePage(driver);
 
 	}
 }

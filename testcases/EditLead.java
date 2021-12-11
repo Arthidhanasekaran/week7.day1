@@ -9,7 +9,7 @@ public class EditLead extends BaseHooks{
 	
 	@Test
 	public void runEditLead() throws InterruptedException {
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(driver);
 		
 		lp.enterUserName().enterPswd()
 		.clickLogin().clickCRMSFA()

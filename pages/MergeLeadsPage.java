@@ -5,10 +5,15 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import base.BaseHooks;
 
 public class MergeLeadsPage extends BaseHooks{
+	
+	public MergeLeadsPage(ChromeDriver driver) {
+		this.driver = driver;
+	}
 	
 	public MergeLeadsPage clickFromLeadLookUp() throws InterruptedException {
 		driver.findElement(By.xpath("//img[@alt='Lookup']")).click();
@@ -40,7 +45,7 @@ public class MergeLeadsPage extends BaseHooks{
 	public ViewLeadPage clickMergeButton() {
 		driver.findElement(By.xpath("//a[text()='Merge']")).click();
 		driver.switchTo().alert().accept();
-		return new ViewLeadPage();
+		return new ViewLeadPage(driver);
 
 	}
 	

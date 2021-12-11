@@ -9,7 +9,7 @@ public class CreateLead extends BaseHooks{
 	
 	@Test
 	public void runCreateLead() {
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(driver);
 		
 		lp.enterUserName().enterPswd()
 		.clickLogin().clickCRMSFA()

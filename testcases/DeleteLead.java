@@ -9,7 +9,7 @@ import pages.LoginPage;
 public class DeleteLead extends BaseHooks{
 	
 	public void runDeleteLead() throws InterruptedException {
-		LoginPage lp = new LoginPage();
+		LoginPage lp = new LoginPage(driver);
 		
 		lp.enterUserName().enterPswd()
 		.clickLogin().clickCRMSFA()

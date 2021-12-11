@@ -1,10 +1,15 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import base.BaseHooks;
 
 public class CreateLeadPage extends BaseHooks{
+	
+	public CreateLeadPage(ChromeDriver driver) {
+		this.driver = driver;
+	}
 	
 	public CreateLeadPage enterCompanyName() {
 		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TCS");
@@ -26,7 +31,7 @@ public class CreateLeadPage extends BaseHooks{
 	
 	public ViewLeadPage clickCreateLeadButton() {
 		driver.findElement(By.name("submitButton")).click();
-		return new ViewLeadPage();
+		return new ViewLeadPage(driver);
 
 	}
 

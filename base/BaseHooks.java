@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseHooks {
-	public static ChromeDriver driver;
+	public ChromeDriver driver;
 	
 	@BeforeMethod
 	public void preCondition() {
